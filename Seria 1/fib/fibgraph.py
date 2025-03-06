@@ -1,5 +1,5 @@
-from ifactorial import ifactorial
-from rfactorial import rfactorial
+from fibi import fibi
+from fibr import fibr
 import sys, time
 
 import matplotlib.pyplot as plt
@@ -13,12 +13,12 @@ def testTime(f, n):
 N=int(sys.argv[1])
 
 X = range(N)
-I = [testTime(ifactorial, n) for n in range(N)]
-R = [testTime(rfactorial, n) for n in range(N)]
+I = [testTime(fibi, n) for n in range(N)]
+R = [testTime(fibr, n) for n in range(N)]
 
 fig, ax = plt.subplots()
 ax.plot(X, R, label='Rekurencyjny')
 ax.plot(X, I, label='Iteracyjny')
 ax.legend()
 #plt.show()
-plt.savefig(f'factorialgraph({N}).pdf')
+plt.savefig(f'fibgraph({N}).pdf')
